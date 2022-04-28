@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-28 Thu 14:05 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Unstoppable Domains</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Mark Ma" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<style>pre.src{background:#343131;color:white;}</style>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Unstoppable Domains</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org46b8b91">1. Introduction</a></li>
+<li><a href="#orgeb5f01e">2. Methods</a></li>
+<li><a href="#orge0c4d1f">3. Results</a>
+<ul>
+<li><a href="#orgfa5d26f">3.1. Domain Name with Empty Records</a></li>
+<li><a href="#org49524ba">3.2. Crypto Address Shortcut</a></li>
+<li><a href="#org8f0808b">3.3. Social Media</a></li>
+<li><a href="#orgbc3692d">3.4. Web Link</a>
+<ul>
+<li><a href="#org494d771">3.4.1. Valid IPFS Link</a></li>
+<li><a href="#orgc8fead9">3.4.2. Turnaround Time Benchmark</a></li>
+<li><a href="#org32899ce">3.4.3. <i>Web3</i> Classification Ranking</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org122c14c">4. Conferences</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org46b8b91" class="outline-2">
+<h2 id="org46b8b91"><span class="section-number-2">1</span> Introduction</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Building a new name delimitation, we call a website <i>web2</i> if a single entity hosts the website's data. If the website's data distributes in a decentralized storage system (e.g., IPFS), we call such a website <i>web3</i>. We notice that some websites are live in both <i>web2</i> and <i>web3</i>. 
+</p>
+
+
+<div id="org9c58734" class="figure">
+<p><img src="./imgs/web3-overview.png" alt="web3-overview.png" />
+</p>
+<p><span class="figure-number">Figure 1: </span><i>Web3</i> Overview</p>
+</div>
+
+
+<div id="org5d317b6" class="figure">
+<p><img src="./imgs/example_route.png" alt="example_route.png" />
+</p>
+<p><span class="figure-number">Figure 2: </span>A running example route in <i>Web3</i></p>
+</div>
+
+<p>
+We can catalog unstoppable domains in four ways.
+</p>
+<ul class="org-ul">
+<li><b>No Information</b>: Onwer bought the domain name from UnstoppableDomains Inc., but yet register any information on Ethereum.</li>
+<li><b>Crypto Address Shortcut</b>: Owner only registers cryptocurrency addresses.</li>
+<li><b>Social Media</b>: Owner resigters social media usernames.</li>
+<li><b>Web Link</b>: Owner resigters web links (e.g., traditional web URL forwading, DNS record and ipfs CID<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup>).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgeb5f01e" class="outline-2">
+<h2 id="orgeb5f01e"><span class="section-number-2">2</span> Methods</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<code>domain_name = "myetherwallet.crypto"</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python" id="org679e2eb"><span style="color: #fff59d;">from</span> web3 <span style="color: #fff59d;">import</span> Web3
+<span style="color: #fff59d;">import</span> json
+<span style="color: #fff59d;">import</span> sys
+sys.path.append(<span style="color: #9ccc65;">'../src'</span>)
+<span style="color: #fff59d;">from</span> Utils <span style="color: #fff59d;">import</span> namehash
+
+<span style="color: #ffcc80;">domainname</span> = <span style="color: #9ccc65;">"myetherwallet.crypto"</span>
+
+<span style="color: #ffcc80;">gateway_rpc</span> = <span style="color: #9ccc65;">"https://mainnet.infura.io/v3/ba8fdd8bbb6d44529e0ac13790731051"</span>
+<span style="color: #ffcc80;">w3</span> = Web3(Web3.HTTPProvider(gateway_rpc))
+<span style="color: #ffcc80;">ud_address</span> = <span style="color: #9ccc65;">"0xD1E5b0FF1287aA9f9A268759062E4Ab08b9Dacbe"</span>
+<span style="color: #ffcc80;">ud_abi</span> = json.load(<span style="color: #ff8A65;">open</span>(<span style="color: #9ccc65;">"../data/ud.abi"</span>))
+<span style="color: #ffcc80;">ud</span> = w3.eth.contract(address=ud_address, abi=ud_abi)
+<span style="color: #ffcc80;">tokenURI</span> = ud.functions.tokenURI(<span style="color: #ff8A65;">int</span>(namehash(domainname).<span style="color: #ff8A65;">hex</span>(),16)).call()
+
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"{tokenURI=}"</span>)
+</pre>
+</div>
+
+<pre class="example">
+tokenURI='https://metadata.unstoppabledomains.com/metadata/myetherwallet.crypto'
+</pre>
+
+
+
+<div class="org-src-container">
+<pre class="src src-python" id="orge242c4b"><span style="color: #fff59d;">import</span> requests
+<span style="color: #fff59d;">import</span> json
+
+<span style="color: #ffcc80;">response</span> = requests.request(<span style="color: #9ccc65;">"GET"</span>, tokenURI)
+<span style="color: #ffcc80;">r</span> = response.json()[<span style="color: #9ccc65;">"properties"</span>][<span style="color: #9ccc65;">"records"</span>]
+<span style="color: #fff59d;">print</span>(<span style="color: #9ccc65;">"record:"</span>)
+<span style="color: #fff59d;">print</span>(json.dumps(r, indent=2))
+</pre>
+</div>
+
+<pre class="example">
+record:
+{
+  "ipfs.html.value": "QmVboz5mZcN8BELbB5FK7gwGFLT4KpqMdayofvVw5fFAsu",
+  "crypto.ETH.address": "0xDECAF9CD2367cdbb726E904cD6397eDFcAe6068D",
+  "social.twitter.username": "myetherwallet",
+  "validation.social.twitter.username": "0xd1b923b5f169d7cc7c029dd9dfe4c621ed17e650950a2bd4d597ef5fa4bf483675cd79297c73ed5b130edbf335aa2e2395ea820c4c604418fc783ce549fb3d541b"
+}
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orge0c4d1f" class="outline-2">
+<h2 id="orge0c4d1f"><span class="section-number-2">3</span> Results</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li><code>blocknumber</code> = 14637420</li>
+</ul>
+</div>
+
+<div id="outline-container-orgfa5d26f" class="outline-3">
+<h3 id="orgfa5d26f"><span class="section-number-3">3.1</span> Domain Name with Empty Records</h3>
+<div class="outline-text-3" id="text-3-1">
+<div class="org-src-container">
+<pre class="src src-python" id="orga7eadeb"><span style="color: #fff59d;">import</span> pandas <span style="color: #fff59d;">as</span> pd
+<span style="color: #ffcc80;">df</span> = pd.read_csv(<span style="color: #9ccc65;">"../data/URIs.csv"</span>, names=[<span style="color: #9ccc65;">"tokenId"</span>, <span style="color: #9ccc65;">"URI"</span>, <span style="color: #9ccc65;">"records"</span>])
+<span style="color: #ffcc80;">norecords</span> = df[df[<span style="color: #9ccc65;">'records'</span>] == <span style="color: #9ccc65;">'{}'</span>]
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"number of domain names with empty records: {norecords.shape[0]}"</span>)
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"percentage of domain names with empty records: {norecords.shape[0] / df.shape[0]:.3}"</span>)
+</pre>
+</div>
+
+<pre class="example">
+number of domain name with at least one crypto address: 76296
+percentage of domain name with at least one crypto address: 0.247
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org49524ba" class="outline-3">
+<h3 id="org49524ba"><span class="section-number-3">3.2</span> Crypto Address Shortcut</h3>
+<div class="outline-text-3" id="text-3-2">
+<div class="org-src-container">
+<pre class="src src-python" id="orgf2c258f"><span style="color: #fff59d;">import</span> json
+<span style="color: #ffcc80;">keys</span> = json.load(<span style="color: #ff8A65;">open</span>(<span style="color: #9ccc65;">"../data/supported-keys.json"</span>, <span style="color: #9ccc65;">"r"</span>))
+<span style="color: #ffcc80;">crypto</span> = <span style="color: #ff8A65;">set</span>(<span style="color: #ff8A65;">filter</span>(<span style="color: #fff59d;">lambda</span> x:x.split(<span style="color: #9ccc65;">"."</span>)[0] ==<span style="color: #9ccc65;">"crypto"</span>, keys[<span style="color: #9ccc65;">"keys"</span>].keys()))
+<span style="color: #fff59d;">def</span> <span style="color: #84ffff;">remove_keys</span>(jsonstring, remaining_keys):
+    <span style="color: #ffcc80;">data</span> = <span style="color: #ff8A65;">eval</span>(jsonstring)
+    <span style="color: #ffcc80;">keys</span> = <span style="color: #ff8A65;">set</span>(remaining_keys) &amp; <span style="color: #ff8A65;">set</span>(data.keys())
+    <span style="color: #fff59d;">return</span> {k:data[k] <span style="color: #fff59d;">for</span> k <span style="color: #fff59d;">in</span> keys}
+
+<span style="color: #ffcc80;">df_crypto</span> = df[<span style="color: #9ccc65;">"records"</span>].<span style="color: #ff8A65;">apply</span>(remove_keys, remaining_keys=crypto)
+<span style="color: #ffcc80;">df_crypto</span> = df[df_crypto != {}]
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"number of domain name with at least one crypto address: {df_crypto.shape[0]}"</span>)
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"percentage of domain name with at least one crypto address: {df_crypto.shape[0]/ df.shape[0]:.3}"</span>)
+</pre>
+</div>
+
+<pre class="example">
+number of domain names with empty records: 186173
+percentage of domain names with empty records: 0.604
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org8f0808b" class="outline-3">
+<h3 id="org8f0808b"><span class="section-number-3">3.3</span> Social Media</h3>
+<div class="outline-text-3" id="text-3-3">
+<div class="org-src-container">
+<pre class="src src-python" id="org8c2065d"><span style="color: #ffcc80;">social</span> = <span style="color: #ff8A65;">set</span>(<span style="color: #ff8A65;">filter</span>(<span style="color: #fff59d;">lambda</span> x:x.split(<span style="color: #9ccc65;">"."</span>)[0] <span style="color: #fff59d;">in</span> [<span style="color: #9ccc65;">"social"</span>,<span style="color: #9ccc65;">"whois"</span>, <span style="color: #9ccc65;">"guhhndb"</span>], keys[<span style="color: #9ccc65;">"keys"</span>].keys()))
+<span style="color: #ffcc80;">df_social</span> = df[<span style="color: #9ccc65;">"records"</span>].<span style="color: #ff8A65;">apply</span>(remove_keys, remaining_keys=social)
+<span style="color: #ffcc80;">df_social</span> = df[df_social != {}]
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"number of domain name with at least one web link: {df_social.shape[0]}"</span>)
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"percentage of domain name with at least one web link: {df_social.shape[0]/df.shape[0]:.3}"</span>)
+</pre>
+</div>
+
+<pre class="example">
+number of domain name with at least one crypto address: 76296
+percentage of domain name with at least one crypto address: 0.247
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgbc3692d" class="outline-3">
+<h3 id="orgbc3692d"><span class="section-number-3">3.4</span> Web Link</h3>
+<div class="outline-text-3" id="text-3-4">
+<div class="org-src-container">
+<pre class="src src-python" id="orgf2a6978"><span style="color: #ffcc80;">weblinks</span> = <span style="color: #ff8A65;">set</span>(<span style="color: #ff8A65;">filter</span>(<span style="color: #fff59d;">lambda</span> x:x.split(<span style="color: #9ccc65;">"."</span>)[0] <span style="color: #fff59d;">in</span> [<span style="color: #9ccc65;">"ipfs"</span>, <span style="color: #9ccc65;">"dweb"</span>, <span style="color: #9ccc65;">"browser"</span>, <span style="color: #9ccc65;">"dns"</span>, <span style="color: #9ccc65;">"forwarding"</span>], keys[<span style="color: #9ccc65;">"keys"</span>].keys()))
+<span style="color: #ffcc80;">df_weblinks</span> = df[<span style="color: #9ccc65;">"records"</span>].<span style="color: #ff8A65;">apply</span>(remove_keys, remaining_keys=weblinks)
+<span style="color: #ffcc80;">df_weblinks</span> = df[df_weblinks != {}]
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"number of domain name with at least one web link: {df_weblinks.shape[0]}"</span>)
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"percentage of domain name with at least one web link: {df_weblinks.shape[0]/df.shape[0]:.3}"</span>)
+</pre>
+</div>
+
+<pre class="example">
+number of domain name with at least one web link: 58371
+percentage of domain name with at least one web link: 0.189
+</pre>
+</div>
+
+<div id="outline-container-org494d771" class="outline-4">
+<h4 id="org494d771"><span class="section-number-4">3.4.1</span> Valid IPFS Link</h4>
+<div class="outline-text-4" id="text-3-4-1">
+<p>
+A local or remote gateway is necessary to access data in the decentralized storage system.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #ffcc80;">topics</span> = [<span style="color: #9ccc65;">"automotive"</span>, <span style="color: #9ccc65;">"travel"</span>, <span style="color: #9ccc65;">"science"</span>, <span style="color: #9ccc65;">"technology"</span>,
+          <span style="color: #9ccc65;">"nature"</span>, <span style="color: #9ccc65;">"sports"</span>, <span style="color: #9ccc65;">"business"</span>, <span style="color: #9ccc65;">"beauty"</span>, <span style="color: #9ccc65;">"fashion"</span>, <span style="color: #9ccc65;">"music"</span>, <span style="color: #9ccc65;">"art"</span>,
+          <span style="color: #9ccc65;">"movie"</span>, <span style="color: #9ccc65;">"entertainment"</span>, <span style="color: #9ccc65;">"media"</span>, <span style="color: #9ccc65;">"children"</span>, <span style="color: #9ccc65;">"health"</span>, <span style="color: #9ccc65;">"gambling"</span>,
+          <span style="color: #9ccc65;">"religion"</span>, <span style="color: #9ccc65;">"education"</span>, <span style="color: #9ccc65;">"politics"</span>, <span style="color: #9ccc65;">"history"</span>, <span style="color: #9ccc65;">"war"</span>, <span style="color: #9ccc65;">"news"</span>,
+          <span style="color: #9ccc65;">"food"</span>, <span style="color: #9ccc65;">"literature"</span>, <span style="color: #9ccc65;">"crime"</span>]
+<span style="color: #ffcc80;">df_valid</span> = pd.read_csv(<span style="color: #9ccc65;">"../data/similarity.csv"</span>, names=[<span style="color: #9ccc65;">"domain"</span>]+topics+[<span style="color: #9ccc65;">"isTemplate"</span>])
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"number of valid IPFS link: {df_valid.shape[0]}"</span>)
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"percentage of valid IPFS link over all web links: {df_valid.shape[0]/df_weblinks.shape[0]:.3}"</span>)
+<span style="color: #ffcc80;">df_not_empty</span> = df_valid[(df_valid[topics] != 0).<span style="color: #ff8A65;">any</span>(axis=1)].reset_index(drop=<span style="color: #8bc34a;">True</span>)
+<span style="color: #ffcc80;">result</span> = df_not_empty[df_not_empty[<span style="color: #9ccc65;">"isTemplate"</span>] == <span style="color: #8bc34a;">False</span>].drop_duplicates()
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"number of non-empty or non-template website: {result.shape[0]}"</span>)
+<span style="color: #fff59d;">print</span>(f<span style="color: #9ccc65;">"percentage of non-empty or non-template website over all web links: {result.shape[0]/df_weblinks.shape[0]:.3}"</span>)
+</pre>
+</div>
+
+<pre class="example">
+number of valid IPFS link: 32185
+percentage of valid IPFS link over all web links: 0.92
+number of non-empty or non-template website: 4902
+percentage of non-empty or non-template website over all web links: 0.14
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc8fead9" class="outline-4">
+<h4 id="orgc8fead9"><span class="section-number-4">3.4.2</span> Turnaround Time Benchmark</h4>
+<div class="outline-text-4" id="text-3-4-2">
+</div>
+<ol class="org-ol">
+<li><a id="orgbe363c8"></a><span class="todo TODO">TODO</span> how to deal with timeout records?<br />
+<div class="outline-text-5" id="text-3-4-2-1">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fff59d;">from</span> tabulate <span style="color: #fff59d;">import</span> tabulate
+<span style="color: #fff59d;">import</span> pandas <span style="color: #fff59d;">as</span> pd
+<span style="color: #fff59d;">import</span> numpy <span style="color: #fff59d;">as</span> np
+<span style="color: #ffcc80;">df</span> = pd.read_csv(<span style="color: #9ccc65;">"../data/elapsed/all.csv"</span>).replace(to_replace=-1, value=np.nan)
+<span style="color: #ffcc80;">sat</span> = df.describe()
+
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 1:</span> Turnaround Time for Different Routes</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">&#xa0;</th>
+<th scope="col" class="org-right">remote name resolution</th>
+<th scope="col" class="org-right">local name resolution remote rpc</th>
+<th scope="col" class="org-right">local name resolution local rpc</th>
+<th scope="col" class="org-right">remote ipfs gateway</th>
+<th scope="col" class="org-right">local ipfs gateway</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">count</td>
+<td class="org-right">4881</td>
+<td class="org-right">4863</td>
+<td class="org-right">4863</td>
+<td class="org-right">4736</td>
+<td class="org-right">4710</td>
+</tr>
+
+<tr>
+<td class="org-left">mean</td>
+<td class="org-right">0.114883</td>
+<td class="org-right">0.0539154</td>
+<td class="org-right">0.0247745</td>
+<td class="org-right">0.74634</td>
+<td class="org-right">0.588787</td>
+</tr>
+
+<tr>
+<td class="org-left">std</td>
+<td class="org-right">0.0420121</td>
+<td class="org-right">0.0254008</td>
+<td class="org-right">0.0147771</td>
+<td class="org-right">1.04107</td>
+<td class="org-right">0.562624</td>
+</tr>
+
+<tr>
+<td class="org-left">min</td>
+<td class="org-right">0.0640597</td>
+<td class="org-right">0.0394466</td>
+<td class="org-right">0.0132668</td>
+<td class="org-right">0.0738649</td>
+<td class="org-right">0.0101256</td>
+</tr>
+
+<tr>
+<td class="org-left">25%</td>
+<td class="org-right">0.0850315</td>
+<td class="org-right">0.0472939</td>
+<td class="org-right">0.0163925</td>
+<td class="org-right">0.445093</td>
+<td class="org-right">0.352723</td>
+</tr>
+
+<tr>
+<td class="org-left">50%</td>
+<td class="org-right">0.123342</td>
+<td class="org-right">0.0489628</td>
+<td class="org-right">0.022778</td>
+<td class="org-right">0.520961</td>
+<td class="org-right">0.465822</td>
+</tr>
+
+<tr>
+<td class="org-left">75%</td>
+<td class="org-right">0.132211</td>
+<td class="org-right">0.0513262</td>
+<td class="org-right">0.0264394</td>
+<td class="org-right">0.738641</td>
+<td class="org-right">0.669094</td>
+</tr>
+
+<tr>
+<td class="org-left">max</td>
+<td class="org-right">1.57274</td>
+<td class="org-right">0.620818</td>
+<td class="org-right">0.441556</td>
+<td class="org-right">10.0168</td>
+<td class="org-right">9.867</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+As depicted in Fig.<a href="#org9c58734">1</a>, users have multiple routes to reach a destination website. The mean turnaround time for the running example route, <code>domain name</code> -&gt; <code>remote node RPC</code> -&gt; <code>remote IPFS gateway</code> -&gt; <code>frontpage</code>, is 0.0539154 + 0.74634 = 0.8002554 seconds.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+
+<div id="outline-container-org32899ce" class="outline-4">
+<h4 id="org32899ce"><span class="section-number-4">3.4.3</span> <i>Web3</i> Classification Ranking</h4>
+<div class="outline-text-4" id="text-3-4-3">
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #fff59d;">from</span> matplotlib <span style="color: #fff59d;">import</span> pyplot <span style="color: #fff59d;">as</span> plt
+plt.rcParams.update({<span style="color: #9ccc65;">'font.size'</span>: 13})
+<span style="color: #ffcc80;">plt.rcParams</span>[<span style="color: #9ccc65;">'text.usetex'</span>] = <span style="color: #8bc34a;">False</span>
+plt.tight_layout()
+<span style="color: #ffcc80;">fig</span> = plt.figure()
+<span style="color: #ffcc80;">fname</span> = <span style="color: #9ccc65;">'./similarity.png'</span>
+<span style="color: #ffcc80;">sim</span> = result[topics].<span style="color: #ff8A65;">sum</span>().sort_values().plot.barh(figsize=(7, 7))
+sim.set_xlabel(<span style="color: #9ccc65;">"Sum of Similarities"</span>)
+sim.set_ylabel(<span style="color: #9ccc65;">"Classifications"</span>)
+sim.figure.savefig(fname,  dpi=fig.dpi,bbox_inches=<span style="color: #9ccc65;">'tight'</span>)
+
+<span style="color: #ffcc80;">fig</span> = plt.figure()
+<span style="color: #ffcc80;">fname</span> = <span style="color: #9ccc65;">"hashoshi.png"</span>
+<span style="color: #ffcc80;">hashoshi</span> = result[result[<span style="color: #9ccc65;">"domain"</span>] == <span style="color: #9ccc65;">"hashoshi.crypto"</span>]
+<span style="color: #ffcc80;">hashoshi</span> = hashoshi[topics].iloc[0].sort_values().plot.barh(figsize=(7, 7))
+hashoshi.set_xlabel(<span style="color: #9ccc65;">"Similarity for hashoshi.crypto"</span>)
+hashoshi.set_ylabel(<span style="color: #9ccc65;">"Classifications"</span>)
+hashoshi.figure.savefig(fname,dpi=fig.dpi,bbox_inches=<span style="color: #9ccc65;">'tight'</span>)
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption class="t-above"><span class="table-number">Table 2:</span> Web3 classification ranking based on the sum of similarities between words in the index page and classification words in the <code>en_core_web_md</code> model over valid web3 websites</caption>
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left"><img src="./hashoshi.png" alt="hashoshi.png" /></td>
+<td class="org-left"><img src="./similarity.png" alt="similarity.png" /></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org122c14c" class="outline-2">
+<h2 id="org122c14c"><span class="section-number-2">4</span> Conferences</h2>
+<div class="outline-text-2" id="text-4">
+<ul class="org-ul">
+<li><a href="http://www.blockchain-ieee.org/">ieee blockchain</a></li>
+<li><a href="http://wikicfp.com/cfp/servlet/event.showcfp?eventid=153942&amp;copyownerid=166536">BANDIT 2022</a></li>
+<li><a href="http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=156912&amp;copyownerid=45217">IC3K 2022</a></li>
+<li><a href="https://icwe2022.webengineering.org/">ICWE2022</a></li>
+</ul>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://docs.ipfs.io/concepts/content-addressing/">Content addressing and CIDs</a>
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Mark Ma</p>
+<p class="date">Created: 2022-04-28 Thu 14:05</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file /home/markma/UnstoppableDomain/docs/paper.org
+
+
+* TODO how to deal with timeout records?
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2022-04-26 Tue 14:38
+  :ARCHIVE_FILE: ~/UnstoppableDomain/docs/paper.org
+  :ARCHIVE_OLPATH: Results/Web Link/Turnaround Time Benchmark
+  :ARCHIVE_CATEGORY: paper
+  :ARCHIVE_TODO: TODO
+  :END:
+ #+begin_src python :results value raw :return tabulate(sat, headers=sat.columns, tablefmt='orgtbl')
+   from tabulate import tabulate
+   import pandas as pd
+   import numpy as np
+   pd.set_option("display.precision", 3)
+   df = pd.read_csv("../data/elapsed/all.csv").replace(to_replace=-1, value=np.nan)
+   sat = df.describe()
+
+ #+end_src
+
+ #+CAPTION: Turnaround Time for Different Routes
+ #+RESULTS[b551c1e5cb9430aa22fafb1a3dde4465511de302]:
+ |       | remote name resolution | local name resolution remote rpc | local name resolution local rpc | remote ipfs gateway | local ipfs gateway |
+ |-------+------------------------+----------------------------------+---------------------------------+---------------------+--------------------|
+ | count |                   4881 |                             4863 |                            4863 |                4736 |               4710 |
+ | mean  |               0.114883 |                        0.0539154 |                       0.0247745 |             0.74634 |           0.588787 |
+ | std   |              0.0420121 |                        0.0254008 |                       0.0147771 |             1.04107 |           0.562624 |
+ | min   |              0.0640597 |                        0.0394466 |                       0.0132668 |           0.0738649 |          0.0101256 |
+ | 25%   |              0.0850315 |                        0.0472939 |                       0.0163925 |            0.445093 |           0.352723 |
+ | 50%   |               0.123342 |                        0.0489628 |                        0.022778 |            0.520961 |           0.465822 |
+ | 75%   |               0.132211 |                        0.0513262 |                       0.0264394 |            0.738641 |           0.669094 |
+ | max   |                1.57274 |                         0.620818 |                        0.441556 |             10.0168 |              9.867 |
+
+ As depicted in Fig.[[fig:web3 overview]], users have multiple routes to reach a destination website. The meaning turnaround time for the running example route, ~domain name~ -> ~remote node RPC~ -> ~remote IPFS gateway~ -> ~frontpage~, is 
+     
+
