@@ -38,7 +38,8 @@ nlp = spacy.load("en_core_web_md")
 parser = English()
 
 # Topic are the topics of interest - user should first decide which topics to be included for analysis
-topics = ["automotive", "travel", "science", "technology",
+topics = ["blockchain", "decentralization", "cryptocurrency",
+          "automotive", "travel", "science", "technology",
           "nature", "sports", "business", "beauty", "fashion", "music", "art",
           "movie", "entertainment", "media", "children", "health", "gambling",
           "religion", "education", "politics", "history", "war", "news",

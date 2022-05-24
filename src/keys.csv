@@ -1,6 +1,3 @@
-ipfs.html.value
-ipfs.redirect_domain.value
-browser.redirect_url
-forwarding.url
-dns.A
-dns.AAAA        
+version https://git-lfs.github.com/spec/v1
+oid sha256:aee0f8bcac23ac3abde9475f29a15afc79f9789f0a527881798b05a5a85a0f17
+size 101
